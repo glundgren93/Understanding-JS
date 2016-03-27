@@ -49,7 +49,7 @@ var peopleTable = [
 function selectNames(table) {
   return _.rest(_.map(table, _.first));
 }
-// Returns everything but the first entry of the array and produces a new array consisted of the first elements of each item in table
+// Returns everything but the first entry of the array and produces a new array consisted of the second elements of each item in table
 // In this case the result will be 35 and 65
 function selectAges(table) {
   return _.rest(_.map(table, second));
