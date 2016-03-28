@@ -25,8 +25,10 @@ function unsplat(fn) {
   };
 }
 
-var joinElements = unsplat(function(array) {
-  return array.join(' ');
-});
-
-console.log(joinElements(1, 2, 3));
+/* First Class Functions are functions that can go anywhere that any other value can go.
+ A function can be stored in a variable.
+ A function can be stored in an array slot.
+ A function can be stored in an object field.
+ A function can be created as needed.
+ A function can be passed to a function.
+ A function can be returned from a function. */
