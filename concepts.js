@@ -1,3 +1,27 @@
+/*
+FIRST CLASS FUNCTIONS
+
+First Class Functions are functions that can go anywhere that any other value can go.
+  - A function can be stored in a variable.
+  - A function can be stored in an array slot.
+  - A function can be stored in an object field.
+  - A function can be created as needed.
+  - A function can be passed to a function.
+  - A function can be returned from a function.
+High-order functions can do one or both of the following:
+  - Take a function as an argument.
+  - Return a function as result.
+
+  JAVASCRIPT'S MULTIPLE PARADIGMS
+
+  JavaScript is not strictly a functional programming language, instead it facilitates the use of other paradigms as well:
+    - Imperative programming (Programming based around describing actions in detail)
+
+    - Prototype-based object-oriented programming (Programming based aroung prototypal objects and instances of them)
+
+    - Metaprogramming (Programming maniputaling the basis of JavaScript's execution model)
+*/
+
 // All functions have access to the apply method.
 // This method allows you to call the function with an array.
 // The array would be the argument to the function itself.
@@ -24,11 +48,3 @@ function unsplat(fn) {
     return fn.call(null, _.toArray(arguments));
   };
 }
-
-/* First Class Functions are functions that can go anywhere that any other value can go.
- A function can be stored in a variable.
- A function can be stored in an array slot.
- A function can be stored in an object field.
- A function can be created as needed.
- A function can be passed to a function.
- A function can be returned from a function. */
