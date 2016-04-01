@@ -17,33 +17,42 @@ This repository is meant for study purposes only. Most of the code of it will co
   - A function can be stored in a variable.
       ```javascript
         var hello = function() { return 'hello'; };
+
+        hello(); // hello
       ```
 
   - A function can be stored in an array slot.
       ```javascript
         var hellos = ['hello', function() { return 'hello'; }];
+
+        hellos[1](); // hello;
       ```
 
   - A function can be stored in an object field.
       ```javascript
         var hellos = {word: 'hello', fn: function() { return 'hello'; }};
+
+        hellos.fn(); // hello;
       ```
 
   - A function can be created as needed.
       ```javascript
-        (function() { return 'hello '; })() + 'world';
+        (function() { return 'hello '; })() + 'world'; // hello world
       ```
 
   - A function can be passed to a function.
       ```javascript
         function sayHello(fn, msg) { return fn() + msg; }
 
-        sayHello(function() { return 'hello '; }, 'world');
+        sayHello(function() { return 'hello '; }, 'world'); // hello world
       ```
 
   - A function can be returned from a function.
       ```javascript
         function sayHello() { return function() { return 'hello'; }}
+
+        var greeting = sayHello();
+        greeting(); // hello
       ```
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
