@@ -15,11 +15,31 @@ This repository is meant for study purposes only. Most of the code of it will co
 
   First Class Functions are functions that can go anywhere that any other value can go.
   - A function can be stored in a variable.
+      ```javascript
+        var hello = function() { return 'hello'; };
+      ```
   - A function can be stored in an array slot.
+      ```javascript
+        var hellos = ['hello', function() { return 'hello'; }];
+      ```
   - A function can be stored in an object field.
+      ```javascript
+        var hellos = {word: 'hello', fn: function() { return 'hello'; }};
+      ```
   - A function can be created as needed.
+      ```javascript
+        (function() { return 'hello '; })() + 'world';
+      ```
   - A function can be passed to a function.
+      ```javascript
+        function sayHello(fn, msg) { return fn() + msg; }
+
+        sayHello(function() { return 'hello '; }, 'world');
+      ```
   - A function can be returned from a function.
+      ```javascript
+        function sayHello() { return function() { return 'hello'; }}
+      ```
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
