@@ -9,7 +9,7 @@ This repository is meant for study purposes only. Most of the code of it will co
 
 ## Table of Contents
 - [First Class Functions](#first-class-functions)
-- [JavaScript's Multiple Paradigms](#javascript's-multiple-paradigms)
+- [JavaScript's Multiple Paradigms](#javascripts-multiple-paradigms)
 
 ## First Class Functions
 
@@ -27,7 +27,7 @@ This repository is meant for study purposes only. Most of the code of it will co
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
-## JavaScript's Multiple Paradigms
+## JavaScripts Multiple Paradigms
   JavaScript is not strictly a functional programming language, instead it facilitates the use of other paradigms as well:
 
 ### Imperative programming
