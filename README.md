@@ -21,10 +21,6 @@ This repository is meant for study purposes only. Most of the code of it will co
   - A function can be passed to a function.
   - A function can be returned from a function.
 
-  High-order functions can do one or both of the following:
-  - Take a function as an argument.
-  - Return a function as result.
-
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## JavaScripts Multiple Paradigms
