@@ -14,17 +14,15 @@
 
 // Function Constructor
 function Car(wheel, engine) {
-
   this.wheel = wheel;
   this.engine = engine;
-
 }
 
 // If we end up using 500 Car Objects, we'll have 500 'start' methods.
 // If we add it to the prototype, we'll only have it once.
 Car.prototype.start = function() {
   return "The car has started. It has " + this.engine + " engine and " + this.wheel + " wheels";
-}
+};
 
 var punto = new Car(4, 1);
 
@@ -34,25 +32,3 @@ var celta = new Car(2, 1);
 // Since we've added the start method to car's prototype on line 16, it will find it and it will return it.
 console.log(celta.start());
 console.log(punto.start());
-
-
-
-function identifyf(x) {
-  return function() {
-    return x;
-  }
-}
-
-function addf(x) {
-  return function(y) {
-    return x + y;
-  }
-}
-
-function applyf(add) {
-  return function(x) {
-    return function(y) {
-      return add(x, y);
-    }
-  }
-}

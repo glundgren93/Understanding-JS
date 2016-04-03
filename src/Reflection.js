@@ -10,12 +10,14 @@ var person = {
   getFullName: function() {
     return this.firstname + ' ' + this.lastname;
   }
-}
+};
 var john = {
-    firstname: 'John',
-    lastname: 'Doe'
-  }
-  // pass person to john's prototype
+  firstname: 'John',
+  lastname: 'Doe'
+};
+
+// pass person to john's prototype
+// DON'T EVER DO THIS
 john.__proto__ = person;
 
 // grabs every property and method of JOHN and on JOHN's prototype
