@@ -8,8 +8,45 @@ This repository is meant for study purposes only. Most of the code of it will co
   "The major evolution that is still going on for me is towards a more functional programming style, which involves unlearning a lot of old habits, and backing away from some OOP directions." - John Carmack
 
 ## Table of Contents
-- [First Class Functions](#first-class-functions)
 - [JavaScript's Multiple Paradigms](#javascripts-multiple-paradigms)
+- [First Class Functions](#first-class-functions)
+
+## JavaScripts Multiple Paradigms
+  JavaScript is not strictly a functional programming language, instead it facilitates the use of other paradigms as well:
+
+### Imperative programming
+
+```
+- Categorized by its attention no details.
+- Built around direct manipulation and inspection of program state.
+- Often restricted to a level of detail that is good for their compilers rather than for their programmers. (Sokolowski 1991).
+
+```
+> This implementation describes a "99 Bottles of Beer" program and exactly a "99 Bottles of Beer" program.
+Imperative programs are often one-shot implementations and difficult to reuse.
+
+```javascript
+  var lyrics = [];
+
+  for (var bottles = 99; bottles > 0; bottles--) {
+      lyrics.push(bottles + " bottles of beer on the wall");
+      lyrics.push(bottles + " bottles of beer");
+      lyrics.push("Take one down, pass it around");
+
+      if (bottles > 1)
+        lyrics.push((bottles - 1) + " bottles of beer on the wall.");
+      else
+        lyrics.push("No more bottles of beer on the wall!");
+  }
+```
+
+### Prototype-based object-oriented programming
+
+Every object has a secret link to the object which created it, forming a chain. When an object is asked for a property that it does not have, its parent object is asked... continually up the chain until the property is found or until the root object is reached.
+
+Each function in JavaScript (which are objects themselves) actually has a member called "prototype", which is responsible for providing values when an object is asked for them. Having this member allows the constructor mechanism to work. Adding a property to the prototype of a function object will make it available to the constructed object, as well as to all of the objects which inherit from it. ( http://stackoverflow.com/a/186279/1810241)
+
+<sup>[(back to table of contents)](#table-of-contents)</sup>
 
 ## First Class Functions
 
@@ -54,40 +91,5 @@ This repository is meant for study purposes only. Most of the code of it will co
         var greeting = sayHello();
         greeting(); // hello
       ```
-
-<sup>[(back to table of contents)](#table-of-contents)</sup>
-
-## JavaScripts Multiple Paradigms
-  JavaScript is not strictly a functional programming language, instead it facilitates the use of other paradigms as well:
-
-### Imperative programming
-
-```
-- Categorized by its attention no details.
-- Built around direct manipulation and inspection of program state.
-- Often restricted to a level of detail that is good for their compilers rather than for their programmers. (Sokolowski 1991).
-
-```
-> This implementation describes a "99 Bottles of Beer" program and exactly a "99 Bottles of Beer" program.
-Imperative programs are often one-shot implementations and difficult to reuse.
-
-```javascript
-  var lyrics = [];
-
-  for (var bottles = 99; bottles > 0; bottles--) {
-      lyrics.push(bottles + " bottles of beer on the wall");
-      lyrics.push(bottles + " bottles of beer");
-      lyrics.push("Take one down, pass it around");
-
-      if (bottles > 1)
-        lyrics.push((bottles - 1) + " bottles of beer on the wall.");
-      else
-        lyrics.push("No more bottles of beer on the wall!");
-  }
-```
-
-### Prototype-based object-oriented programming
-
-### Metaprogramming
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
