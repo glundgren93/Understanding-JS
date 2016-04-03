@@ -1,6 +1,6 @@
-/* Building Objects */
+/* Building Objects
 
-/* 'new' creates a new empty object and then invokes the function every time new is used,
+'new' creates a new empty object and then invokes the function every time new is used,
  the 'this' variable is set to the empty object that was created.
 
  Every function you create in JavaScript gets the '.prototype' property.
@@ -10,6 +10,7 @@
  We could add methods to the function constructor itself,
  but it would take a lot of memory space, since every function is an object
  and a object creates a new space in memory.
+
  */
 
 // Function Constructor

@@ -1,6 +1,10 @@
-// All functions have access to the apply method.
-// This method allows you to call the function with an array.
-// The array would be the argument to the function itself.
+/* General Concepts
+
+All functions have access to the apply method.
+This method allows you to call the function with an array.
+The array would be the argument to the function itself.
+
+*/
 
 function splat(fn) {
   return function(array) {
