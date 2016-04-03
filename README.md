@@ -1,11 +1,5 @@
-# Functional-JS
-This repository is meant for study purposes only. Most of the code of it will come from the book "Functional JavaScript by Michael Fogus (O'Reilly). Copyright 2013 Michael Fogus, 978-1-449-36072-6."
-
-# What is Functional Programming?
-  "Functional programming is the use of functions that transform values into units of abstraction, subsequently used to build software systems."
-
-# Why Functional Programming matters?
-  "The major evolution that is still going on for me is towards a more functional programming style, which involves unlearning a lot of old habits, and backing away from some OOP directions." - John Carmack
+# Understanding-JS
+This repository is meant for study purposes only.
 
 ## Table of Contents
 - [JavaScript's Multiple Paradigms](#javascripts-multiple-paradigms)
@@ -13,6 +7,15 @@ This repository is meant for study purposes only. Most of the code of it will co
 
 ## JavaScripts Multiple Paradigms
   JavaScript is not strictly a functional programming language, instead it facilitates the use of other paradigms as well:
+
+### Functional programming
+"Functional programming is the use of functions that transform values into units of abstraction, subsequently used to build software systems."
+```
+- Definition of an abstraction.
+- The definition of an abstraction built from existing functions
+- The use of said functions by other functions via parameter passing to achieve some behavior
+
+```
 
 ### Imperative programming
 
