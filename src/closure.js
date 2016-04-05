@@ -43,3 +43,11 @@ function fn() {
 }
 
 fn(); // ['in 1', 'in 2', 'in 3']
+
+
+/* Closures
+
+  A function that captures the external bindings contained in the scope
+  in which it was defined for later use.
+
+*/
