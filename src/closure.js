@@ -8,6 +8,13 @@ The term scope has various meanings:
 
 */
 
+// Helpers
+
+function average(array) {
+  var sum = _.reduce(array, function(a, b) { return a+b; });
+  return sum / _.size(array);
+}
+
 /* Global Scope
 
  Any variable declared in JavaScript without the var keyword is created in the global scope
@@ -35,7 +42,7 @@ lexicalVariable = 'outer';
 function fn() {
   var lexicalVariable = "middle";
 
-  return _.map([1,2,3], function(e) {
+  return _.map([1, 2, 3], function(e) {
     var lexicalVariable = 'in';
 
     return [lexicalVariable, e].join(' ');
@@ -51,3 +58,40 @@ fn(); // ['in 1', 'in 2', 'in 3']
   in which it was defined for later use.
 
 */
+
+// Closure returning local variable
+function whatWasTheVariable() {
+  var variable = 'i am a variable'; // Captured by closure
+
+  return function() {
+    return "The variable was: " + variable;
+  };
+}
+
+var reportVariable = whatWasTheVariable();
+reportVariable(); // The variable was: i am a variable
+
+// The variable factor is retained within the body of the return function
+// and is accessible anytime the function is called.
+// Each new function retains its own UNIQUE instance of the variable factor.
+function scaleFunction(factor /*captured by closure*/ ) {
+  return function(array) {
+    return _.map(array, function(x) {
+      return (x * factor);
+    });
+  };
+}
+
+var scale5 = scaleFunction(5);
+scale5([1, 2, 3]); // [5, 10, 15]
+
+// Closure retaining another function
+function avgDamp(fn /*captured by closure*/) {
+    return function(n, x) {
+      return average([n, x, fn(n, x)]);
+    };
+}
+
+var avgSum = avgDamp(function(n, x) { return n + x; });
+
+avgSum(10, 5); // 10
