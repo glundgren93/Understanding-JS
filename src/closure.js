@@ -11,7 +11,9 @@ The term scope has various meanings:
 // Helpers
 
 function average(array) {
-  var sum = _.reduce(array, function(a, b) { return a+b; });
+  var sum = _.reduce(array, function(a, b) {
+    return a + b;
+  });
   return sum / _.size(array);
 }
 
@@ -56,6 +58,7 @@ fn(); // ['in 1', 'in 2', 'in 3']
 
   A function that captures the external bindings contained in the scope
   in which it was defined for later use.
+  Provide private access in JavaScript.
 
 */
 
@@ -86,12 +89,47 @@ var scale5 = scaleFunction(5);
 scale5([1, 2, 3]); // [5, 10, 15]
 
 // Closure retaining another function
-function avgDamp(fn /*captured by closure*/) {
-    return function(n, x) {
-      return average([n, x, fn(n, x)]);
-    };
+function avgDamp(fn /*captured by closure*/ ) {
+  return function(n, x) {
+    return average([n, x, fn(n, x)]);
+  };
 }
 
-var avgSum = avgDamp(function(n, x) { return n + x; });
+var avgSum = avgDamp(function(n, x) {
+  return n + x;
+});
 
 avgSum(10, 5); // 10
+
+// Pattern to minimize the exposure of captured variables.
+var pingpong = (function() {
+  var PRIVATE = 0;
+
+  return {
+    inc: function(n) {
+      return PRIVATE += n;
+    },
+    dec: function(n) {
+      return PRIVATE -= n;
+    }
+  };
+})();
+
+pingpong.inc(10); // 10
+pingpong.dec(2); // 8
+
+// Closures often allow you to create functions based solely
+// on some "configuration" captured at creation time.
+// An example would be a function that takes a key into an array or object
+// and returns a function that returns the value at the key.
+function plucker(field) {
+  return function(obj) {
+    return (obj && obj[field]);
+  };
+}
+
+var team = {sport: "Soccer", name: "Náutico"};
+
+var getTeamName = plucker('name');
+
+getTeamName(team); // Náutico
