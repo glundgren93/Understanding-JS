@@ -40,8 +40,15 @@ function iterateUntil(fn, check, init) {
 
   return ret;
 }
+
 iterateUntil(function(n) {
   return n * 2;
 }, function(n) {
   return n < 64;
 }, 2); // [4, 8, 16, 32]
+
+/*
+  When you use a closure that mutates a bit of internal code, you cannot necessarily
+  replace any call to the function without breaking your program, because the value that
+  the closure returns is dependent on the number of times that it was called.
+*/
