@@ -1,5 +1,6 @@
 # Understanding-JS
 This repository is meant for study purposes only.
+
 Some contents of this repository comes from the book Function JavaScript by Michael Fogus.
 
 ## Table of Contents
