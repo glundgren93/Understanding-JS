@@ -8,7 +8,7 @@
     - argument-specific tasks.
     - count-specific tasks.
 
-  This pattern is express in the implementation of Underscore's _.map function.
+  This pattern is expressed in the implementation of Underscore's _.map function.
 */
 
 // Returns a function that loops through an array of functions
