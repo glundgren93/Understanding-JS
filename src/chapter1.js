@@ -66,7 +66,7 @@ function executeIfHasField(target, name) {
 
 // Definition of an abstraction for "existence" in the guise of a function
 function existy(x) {
-  return x !== null;
+  return x != null;
 }
 // The definition of an abstraction for "truthiness" built from existing functions
 function truthy(x) {

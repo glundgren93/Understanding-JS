@@ -9,12 +9,24 @@ The term scope has various meanings:
 */
 
 // Helpers
-
 function average(array) {
   var sum = _.reduce(array, function(a, b) {
     return a + b;
   });
   return sum / _.size(array);
+}
+
+function cat() {
+  var head = _.first(arguments);
+
+  if (existy(head))
+    return head.concat.apply(head, _.rest(arguments));
+  else
+    return [];
+}
+
+function construct(head, tail) {
+  return cat([head], _.toArray(tail));
 }
 
 /* Global Scope
@@ -128,7 +140,10 @@ function plucker(field) {
   };
 }
 
-var team = {sport: "Soccer", name: "Náutico"};
+var team = {
+  sport: "Soccer",
+  name: "Náutico"
+};
 
 var getTeamName = plucker('name');
 
