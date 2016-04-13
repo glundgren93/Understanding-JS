@@ -8,11 +8,10 @@
     - argument-specific tasks.
     - count-specific tasks.
 
-  This patter is express in the implementation of Underscore's _.map function.
+  This pattern is expressed in the implementation of Underscore's _.map function.
 
   The essence of functional composition is to use existing parts in well-known
   ways to build up new behaviors that can serve as behaviors themselves.
-
 */
 
 // Returns a function that loops through an array of functions

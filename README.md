@@ -1,6 +1,8 @@
 # Understanding-JS
 This repository is meant for study purposes only.
 
+Some contents of this repository comes from the book Function JavaScript by Michael Fogus.
+
 ## Table of Contents
 - [JavaScript's Multiple Paradigms](#javascripts-multiple-paradigms)
 - [First Class Functions](#first-class-functions)
