@@ -9,6 +9,10 @@
     - count-specific tasks.
 
   This patter is express in the implementation of Underscore's _.map function.
+
+  The essence of functional composition is to use existing parts in well-known
+  ways to build up new behaviors that can serve as behaviors themselves.
+
 */
 
 // Returns a function that loops through an array of functions
@@ -76,21 +80,19 @@ function isa(type, action) {
 // if one of its arguments return a value then it will get executed.
 var performCMD = dispatch(
   isa('notify', function(obj) {
-    console.log(obj.message);
     return obj.message;
   }),
   isa('join', function(obj) {
-    console.log(obj.target);
     return obj.target;
   }),
   function(obj) {
-    alert(obj.type);
+    console.log(obj.type);
   }
 );
 
 // Call function passing object
 // since the function's arguments do not expect an object with type 'delete'
-// it will alert 'delete'
+// it will print 'delete'.
 performCMD({
   type: 'delete',
   message: 'i am a delete object'
@@ -98,7 +100,7 @@ performCMD({
 
 // Call function passing object
 // since the function's arguments expect an object with type 'notify'
-// it will console.log the message of the object and it will also return it
+// it will print the message of the object and it will also return it.
 performCMD({
   type: 'notify',
   message: 'i am a notify object'
@@ -115,8 +117,9 @@ var performAdminCmd = dispatch(
 );
 
 // Call function passing object
-// since the function's arguments do not expect an object with type 'flai'
-// it will alert 'flai'
+// since the function's arguments do not expect an object with type 'flail'
+// it will print 'flail'.
 performAdminCmd({
-  type: 'flail'
+  type: 'flail',
+  hostname: 'localhost'
 });

@@ -32,7 +32,7 @@ function nth(array, index) {
 
 var letters = ['a', 'b', 'c', 'd'];
 
-console.log(nth(letters, 2));
+nth(letters, 2); // c
 
 function second(array) {
   return nth(array, 1);
@@ -82,8 +82,8 @@ function doWhen(conditional, action) {
 
 // The use of said functions by other functions via parameter
 // passing to achieve some behavior
-console.log([null, undefined, 1, 2, false].map(existy));
-console.log([null, undefined, 1, 2, false].map(truthy));
+[null, undefined, 1, 2, false].map(existy); // [false, false, true, true, true]
+[null, undefined, 1, 2, false].map(truthy); // [false, false, true, true, false]
 
 executeIfHasField([1, 2, 3], 'reverse'); // The result is 3, 2, 1
 executeIfHasField({

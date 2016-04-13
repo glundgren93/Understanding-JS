@@ -17,7 +17,7 @@ var addElements = splat(function(x, y, z) {
   return x + y + z;
 });
 
-console.log(addElements([1, 2, 3]));
+addElements([1, 2, 3]); // 6
 
 // Any function may be called with any number of arguments of any type
 function unsplat(fn) {
