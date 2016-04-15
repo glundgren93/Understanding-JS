@@ -10,7 +10,7 @@
 
 // This function takes two arguments and returns their sum
 function add(a, b) {
-  return a + b;
+    return a + b;
 }
 
 add(5, 6); // 11
@@ -19,24 +19,24 @@ add(5, 6); // 11
 // It takes one argument and returns a function that takes another argument
 // and that function returns their sum.
 function curriedAdd(a) {
-  return function(b) {
-    return a + b;
-  };
+    return function(b) {
+        return a + b;
+    };
 }
 
 var add5 = curriedAdd(5);
 add5(6); // 11
 
 function leftCurryDiv(n) {
-  return function(d) {
-    return n/d;
-  };
+    return function(d) {
+        return n / d;
+    };
 }
 
 function rightCurryDiv(d) {
-  return function(n) {
-    return n/d;
-  };
+    return function(n) {
+        return n / d;
+    };
 }
 
 var divide10Left = leftCurryDiv(10);
@@ -45,9 +45,26 @@ divide10Left(2); // 5
 var divide10Right = rightCurryDiv(10);
 divide10Right(2); // 0.2
 
+function curry(fn) {
+    return function(arg) {
+        return fn(arg);
+    };
+}
+var alertCurry = curry(alert);
+// alertCurry('lala');
 
-console.log(['11', '11', '11', '11'].map(parseInt));
-console.log("base0 " + parseInt('11',0));
-console.log("base1 " + parseInt('11',1));
-console.log("base2 " + parseInt('11',2));
-console.log("base3 " + parseInt('11',3));
+function curry2(fun) {
+    return function(secondArg) {
+        return function(firstArg) {
+            return fun(firstArg, secondArg);
+        };
+    };
+}
+
+function divide(n, d) {
+    return n / d;
+}
+
+var div4 = curry2(divide)(10);
+
+div4(40); // 4
