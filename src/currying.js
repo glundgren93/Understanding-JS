@@ -51,7 +51,6 @@ function curry(fn) {
     };
 }
 var alertCurry = curry(alert);
-// alertCurry('lala');
 
 function curry2(fun) {
     return function(secondArg) {
@@ -68,3 +67,22 @@ function divide(n, d) {
 var div4 = curry2(divide)(10);
 
 div4(40); // 4
+
+
+/*
+  Partial Application
+  Function that is "partially" executed and is ready for immediate execution given
+  the remainder of its expected arguments.
+*/
+
+// The function returned from partial1 captures the arg1 from the original call
+// and puts it at the front of the arglist of the executing call.
+function partial1(fun, arg1) {
+    return function() {
+        var args = construct(arg1, arguments);
+        return fun.apply(fun, args);
+    }
+}
+
+var over10Part1 = partial1(divide, 10);
+over10Part1(5, 2); // 2
