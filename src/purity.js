@@ -16,4 +16,21 @@ Pure functions are important for:
  - Writing testable code
  - Having predictable code
 
+It's ok for a pure function to mutate some local data in order to produce an
+immutable return value.
+
 */
+
+function skipTake(n, coll) {
+  var ret = [];
+  var sz = _.size(coll);
+
+  for(var i = 0; i < sz; i += n) {
+    // mutate ret array (local data)
+    ret.push(coll[i]);
+  }
+
+  return ret;
+}
+
+skipTake(2, [1, 2, 3, 4, 5])
