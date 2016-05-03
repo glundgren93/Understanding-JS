@@ -34,3 +34,42 @@ function skipTake(n, coll) {
 }
 
 skipTake(2, [1, 2, 3, 4, 5])
+
+
+/*
+ Object#freeze will cause all subsequent mutations to fail
+ The problem of freeze is that it is shallow, which means that
+ a freeze will only happen at the topmost level and will not
+ traverse nested objects.
+ */
+var a = [1, 2, 3];
+
+a[1] = 42;
+a; // 42
+
+Object.freeze(a);
+
+a[1] = 100;
+a; // 42
+
+
+function Point(x, y) {
+  this._x = x;
+  this._y = y;
+}
+
+// Methods used as "modifiers", because nothing is actually modified, as they return
+// fresh instance of Point.
+Point.prototype = {
+  withX: function(val) {
+    return new Point(val, this._y);
+  },
+  withY: function(val) {
+    return new Point(this._x, val);
+  }
+};
+
+var p = new Point(0, 1);
+
+p.withX(1000); // {_x: 1000, _y: 1 }
+p; // {_x: 0, _y: 1 }
